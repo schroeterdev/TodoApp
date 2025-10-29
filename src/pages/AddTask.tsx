@@ -147,24 +147,6 @@ const AddTask = () => {
         {/* fix for input colors */}
         <InputThemeProvider>
           <StyledInput
-            label="Task Name"
-            name="name"
-            placeholder="Enter task name"
-            autoComplete="off"
-            value={name}
-            onChange={handleNameChange}
-            required
-            error={nameError !== ""}
-            helpercolor={nameError && ColorPalette.red}
-            helperText={
-              name === ""
-                ? undefined
-                : !nameError
-                  ? `${name.length}/${TASK_NAME_MAX_LENGTH}`
-                  : nameError
-            }
-          />
-          <StyledInput
             label="Task Description"
             name="name"
             placeholder="Enter task description"
@@ -231,6 +213,24 @@ const AddTask = () => {
             setColor(color);
           }}
           fontColor={getFontColor(theme.secondary)}
+        />
+        <StyledInput
+          label="Task Description"
+          name="description"
+          placeholder="Enter task description"
+          autoComplete="off"
+          value={name}
+          onChange={handleNameChange}
+          required
+          error={nameError !== ""}
+          helpercolor={nameError && ColorPalette.red}
+          helperText={
+            name === ""
+              ? undefined
+              : !nameError
+                ? `${name.length}/${TASK_NAME_MAX_LENGTH}`
+                : nameError
+          }
         />
         <AddTaskButton
           onClick={handleAddTask}
