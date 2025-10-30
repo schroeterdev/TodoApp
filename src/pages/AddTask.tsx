@@ -153,7 +153,6 @@ const AddTask = () => {
             autoComplete="off"
             value={description}
             onChange={handleDescriptionChange}
-            multiline
             rows={4}
             error={descriptionError !== ""}
             helpercolor={descriptionError && ColorPalette.red}
@@ -221,7 +220,6 @@ const AddTask = () => {
           autoComplete="off"
           value={name}
           onChange={handleNameChange}
-          required
           error={nameError !== ""}
           helpercolor={nameError && ColorPalette.red}
           helperText={
